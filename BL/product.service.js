@@ -53,7 +53,7 @@ async function productIsExists(id) {
 }
 
 
-
+module.exports={createNewProduct}
 
 let product = [{
     id: 7,
@@ -65,9 +65,13 @@ let product = [{
     inStock: 33
 }]
 
+<<<<<<< HEAD
 module.exports = {
     createNewProduct,
     updateProduct,
     
 
 }
+=======
+// init();
+>>>>>>> c590f65f07a2dda7b3658fa8b006164fc6eaddd6
