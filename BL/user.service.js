@@ -7,15 +7,19 @@ async function createNewUser(data) {
     if(user) throw "user is exist"
 
     let res = await userDL.create(data);
+    console.log(res)
+
     return res;
+
 }
 
 let user = {
-    fName: "moshe",
-    lName: "levy",
-    email: "moshe_ll@gmail.com",
-    password: "63kjdsak93",
-    dob: new Date(1980, 8, 6),
-    gender: "female",
-    permission: "admin"
+    fName: "lior",
+    lName: "blaaaa",
+    email: "lior@gmail.com",
+    password: "123123",
+    dob: new Date(1987, 6, 2),
+    gender: "male"
 }
+
+ createNewUser(user)

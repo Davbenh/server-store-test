@@ -40,23 +40,24 @@ async function init(order) {
         console.log(e.message);
     }
 }
-const getNewOrderId = () => 3982498
+const getNewOrderId = () => 3982499
 
 
 
 let order = {
     id: getNewOrderId(),
-    userId: '637f8d93348a28c897babf26',
+    userId: '63907cac57d46f0f12394609',
     products: [
         {
-            product: '63904e50f854b601b5d49adc',
+            product: '6390707a072c7258666ce6df',
             quantity: 5,
-            finalPrice: 15
+            finalPrice: 30
         }, {
-            product: '63904e610f13818665918057',
+            product: '63906c1681bd0168a0ac9f8e',
             quantity: 1,
             finalPrice: 300
         }],
     totalPrice: 315,
 }
 getAllOrderPop()
+init()
