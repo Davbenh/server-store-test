@@ -1,4 +1,5 @@
 const productController = require("../DL/product.controller");
+require("../DL/db").connect();
 
 
 async function init() {
@@ -54,14 +55,19 @@ async function productIsExists(id) {
 
 
 
-let product = {
-    id: 2,
-    title: "airplane",
-    price: 300,
-    description: "lorem ipsum...",
-    category: {title: "electronics"},
-    image: "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ioY9jnR7w52Y/v0/1200x-1.jpg",
-    inStock: 10
-}
+let product = [{
+    id: 7,
+    title: "chicken wings",
+    price: 43,
+    description: "this is chicken",
+    category: {title: "meat"},
+    image: "https://img.rami-levy.co.il/product/2680406/5598/medium.jpg",
+    inStock: 33
+}]
 
-init();
+module.exports = {
+    createNewProduct,
+    updateProduct,
+    
+
+}
