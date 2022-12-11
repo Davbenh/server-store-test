@@ -1,4 +1,4 @@
-const userDL = require('../DL/user.controller')
+const userDL = require('../DL/controllers/user.controller')
 
 async function createNewUser(data) {
     if(!data.email || !data.password) throw "missing data"

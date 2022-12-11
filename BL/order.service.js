@@ -1,7 +1,7 @@
 
-const orderController = require("../DL/order.controller");
-const userController = require("../DL/user.controller");
-const productController = require("../DL/product.controller");
+const orderController = require("../DL/controllers/order.controller");
+const userController = require("../DL/controllers/user.controller");
+const productController = require("../DL/controllers/product.controller");
 
 
 async function getAllOrderPop() {

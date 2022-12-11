@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-require("./product.model");
-require("./user.model");
+require("../models/product.model");
+require("../models/user.model");
 
 
 const orderSchema = new mongoose.Schema({

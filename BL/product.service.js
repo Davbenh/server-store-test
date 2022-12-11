@@ -1,4 +1,4 @@
-const productController = require("../DL/product.controller");
+const productController = require("../DL/controllers/product.controller");
 require("../DL/db").connect();
 
 
