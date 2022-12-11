@@ -2,19 +2,6 @@ const productController = require("../DL/controllers/product.controller");
 require("../DL/db").connect();
 
 
-async function init() {
-    try {
-        const { status, newProduct } = await createNewProduct(product);
-        console.log(status, newProduct);
-
-        // const { updateStatus, updatedProduct } = await updateProduct(product.id, {inStock: 5});
-        // console.log(updateStatus, updatedProduct);
-    }
-    catch(e) {
-        console.log(e.message);
-    }
-}
-
 
 
 async function createNewProduct(productData) {
@@ -49,21 +36,23 @@ function productValidation(productData) {
 }
 
 async function productIsExists(id) {
-    return await productController.read({id,});
+    return await productController.read({id});
+}
+
+const addProduct = async(item) => {
+    const newProd = await productController.create({
+        name: item.name,
+        inStock: item.inStock //למלא לפי הסכמה של הפרודוקט
+    })
+    return newProd;
+}
+
+const getAllProducts = async() => {
+    const products = await productController.read({})
+    
 }
 
 
-module.exports={createNewProduct}
-
-// let product = [{
-//     id: 7,
-//     title: "chicken wings",
-//     price: 43,
-//     description: "this is chicken",
-//     category: {title: "meat"},
-//     image: "https://img.rami-levy.co.il/product/2680406/5598/medium.jpg",
-//     inStock: 33
-// }]
 
 module.exports = {
     createNewProduct,

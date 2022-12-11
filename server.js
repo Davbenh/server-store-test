@@ -1,10 +1,12 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const app = express();
+
 const PORT = process.env.PORT || 3625;
 
 require("./DL/db").connect();
-const cors = require("cors");
+
 
 const userRouter = require("./routes/userRouter");
 const orderRouter = require("./routes/orderRouter");
@@ -13,20 +15,13 @@ const productRouter = require("./routes/productRouter");
 app.use(cors());
 app.use(express.json());
 
-const users = [];
-let user = {
-  id: 123,
-  fName: "aviad",
-  age: 31,
-  address: "Kfar Adumim",
-};
-users.push(user);
 
-app.get("/user", (req, res) => {
-  res.send(users);
-});
-app.use(userRouter);
+// app.use('/api',(req,res,next)=>{
+//   console.log(req);
+//   res.send(req.body);
+// });
 
+app.use('/api/user',userRouter)
 
 // const productService = require("./BL/product.service");
 // app.post("/product", async (req, res) => {

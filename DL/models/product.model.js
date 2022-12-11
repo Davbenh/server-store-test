@@ -21,11 +21,11 @@ const ProductSchema = new mongoose.Schema({
     title : {
         type : String,
         required : true,
-        trim : true,
+        trim : true
     },
     price : {
         type : Number,
-        required : true,
+        required : true
     },
     description : {
         type : String,
@@ -35,20 +35,16 @@ const ProductSchema = new mongoose.Schema({
     category : CategorySchema,
 
     image : {
-        type : String,
+        type : String
     },
     inStock : {
         type : Number,
         required : true,
-        default : 0,
-        // validate: {
-        //     validator: v => v >= 0,
-        //     message: props => `${props.value} must be above 0`
-        // }
+        default : 0
     },
     isActive : {
         type : Boolean,
-        default : true,
+        default : true
     }
 
 })
