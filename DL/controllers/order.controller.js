@@ -1,4 +1,4 @@
-const orderData = require("./order.model")
+const orderData = require("../models/order.model")
 
 
 async function create(data) {

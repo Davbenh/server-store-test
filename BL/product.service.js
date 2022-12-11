@@ -1,4 +1,4 @@
-const productController = require("../DL/product.controller");
+const productController = require("../DL/controllers/product.controller");
 require("../DL/db").connect();
 
 
@@ -55,19 +55,18 @@ async function productIsExists(id) {
 
 module.exports={createNewProduct}
 
-let product = [{
-    id: 7,
-    title: "chicken wings",
-    price: 43,
-    description: "this is chicken",
-    category: {title: "meat"},
-    image: "https://img.rami-levy.co.il/product/2680406/5598/medium.jpg",
-    inStock: 33
-}]
+// let product = [{
+//     id: 7,
+//     title: "chicken wings",
+//     price: 43,
+//     description: "this is chicken",
+//     category: {title: "meat"},
+//     image: "https://img.rami-levy.co.il/product/2680406/5598/medium.jpg",
+//     inStock: 33
+// }]
 
 module.exports = {
     createNewProduct,
     updateProduct,
-    
-
+    productIsExists
 }

@@ -1,4 +1,4 @@
-const userDL = require('../DL/user.controller')
+const userDL = require('../DL/controllers/user.controller')
 
 async function createNewUser(data) {
     if(!data.email || !data.password) throw "missing data"
@@ -13,13 +13,15 @@ async function createNewUser(data) {
 
 }
 
-let user = {
-    fName: "lior",
-    lName: "blaaaa",
-    email: "lior@gmail.com",
-    password: "123123",
-    dob: new Date(1987, 6, 2),
-    gender: "male"
-}
+// let user = {
+//     fName: "lior",
+//     lName: "blaaaa",
+//     email: "lior@gmail.com",
+//     password: "123123",
+//     dob: new Date(1987, 6, 2),
+//     gender: "male"
+// }
 
- createNewUser(user)
+//  createNewUser(user)
+
+module.exports = {createNewUser}
