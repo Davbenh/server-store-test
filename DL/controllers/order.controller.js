@@ -6,10 +6,8 @@ async function create(data) {
 }
 
 async function read(filter, proj) {
-    return await orderData
-        .find(filter, proj)
-        .populate('userId', 'email permission')
-        .populate('products.product');
+    return await orderData.find(filter, proj);
+
 }
 
 async function updateOne(orderId, newData) {

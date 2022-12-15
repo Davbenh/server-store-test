@@ -17,23 +17,10 @@ async function createNewProduct(productData) {
     }
 }
 
-async function updateProduct(productId, newData) {
+const updateProduct = async (filter,newData) => {
+    return await productController.update(filter,newData); //אובייקט ריק מחזיר את כל הרשומות
+  };
 
-    productValidation(newData);
-    const exists = await productIsExists(productId);
-    if (exists.length != 1 ) throw new Error("Invalid search ID");
-
-    await productController.updateMany({id: productId}, newData);
-    const updatedProduct = await productController.read({id: productId})
-    return {
-        updateStatus: 'success',
-        updatedProduct,
-    }
-}
-
-function productValidation(productData) {
-    return true; // Need to add validation
-}
 
 async function productIsExists(id) {
     return await productController.read({id});
@@ -49,13 +36,22 @@ const addProduct = async(item) => {
 
 const getAllProducts = async() => {
     const products = await productController.read({})
-    
+    return products;
+
 }
+
+const getProduct = async (filter,proj) => {
+    return await productController.readOne(filter,proj); //אובייקט ריק מחזיר את כל הרשומות
+  };
+
 
 
 
 module.exports = {
     createNewProduct,
     updateProduct,
-    productIsExists
+    productIsExists,
+    addProduct,
+    getAllProducts,
+    getProduct
 }
